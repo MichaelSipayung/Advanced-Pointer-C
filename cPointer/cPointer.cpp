@@ -12,6 +12,11 @@ int main()
 	aritmaticOperation();
 	traverseElementPoin();
 	advancedTraverse();
+	logicalOperation();
+	pointerAndArray();
+	traverseArrayPointer();
+	advancedArrayPoin();
+	traverseChar();
 	return 0;
 }
 void pointer() {
@@ -68,4 +73,59 @@ void advancedTraverse() {
 		printf("%d | ", *p_first);
 		++p_first;
 	}
+}
+void logicalOperation() {
+	int nilai = 100, nilai2 = 100,*pn1,*pn2;
+	pn1 = &nilai;
+	pn2 = &nilai2;
+	//compare the address
+	printf("\n");
+	if (pn1<pn2)
+	{
+		printf("first address point to the lower addreses\n");
+	}
+	else {
+		printf("the second address point to the lower addreses\n");
+	}
+}
+void pointerAndArray() {
+	int array[] = { 1,2,3,4,5 };
+	printf("test the relation between an array and pointer %d", *(array));//equivalent call .. array[i]
+	printf("test the relation between an array and pointer %d", *(array+1));//without make temporary pointer
+}
+void traverseArrayPointer() {
+	int array[] = { 1,2,3,4,5,6 };
+	int end = sizeof(array) / sizeof(*array);
+	int begin = 0;
+	printf("\nResult \t: [");
+	while (begin!=(end))
+	{
+		printf("%d|", *(array+begin));
+		++begin;
+	}
+	printf("]\n");
+}
+void advancedArrayPoin() {
+	int array[] = { 1,2,3,4,5,6 };
+	int total = 0;
+	int end = sizeof(array) / sizeof(*array);
+	int begin = 0;
+	while (begin!=end)
+	{
+		total += (*(array + begin));
+		++begin;
+	}
+	printf("Result sum all element \t: %d \n", total);
+}
+void traverseChar() {
+	char sequence[] = "michael sipayung",*point;
+	point = sequence;
+	int end = sizeof(sequence) / sizeof(*sequence);
+	int begin = 0;
+	while (begin!=(end-1))//detection through null character
+	{
+		*(sequence+begin) = toupper(*(sequence+begin));
+		++begin;
+	}
+	printf("Result %s ", sequence);
 }
