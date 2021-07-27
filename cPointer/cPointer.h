@@ -6,6 +6,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <cctype>
+#include <cstdlib>
 void pointer();
 void assignmentPointer();
 void aritmaticOperation();
@@ -16,4 +17,6 @@ void pointerAndArray();
 void traverseArrayPointer();
 void advancedArrayPoin();
 void traverseChar();
+void accessingArrayPoint();
+
 // TODO: Reference additional headers your program requires here.

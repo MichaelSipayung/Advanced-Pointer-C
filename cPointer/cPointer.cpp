@@ -3,7 +3,6 @@
 
 #include "cPointer.h"
 
-
 int main()
 {
 	printf("hello cmake \n");
@@ -17,6 +16,8 @@ int main()
 	traverseArrayPointer();
 	advancedArrayPoin();
 	traverseChar();
+	accessingArrayPoint();
+	
 	return 0;
 }
 void pointer() {
@@ -129,3 +130,26 @@ void traverseChar() {
 	}
 	printf("Result %s ", sequence);
 }
+void accessingArrayPoint() {
+	int x[5],*pointer;
+	pointer = x;
+	*(pointer) = 12;
+	*(pointer + 1) = 13;
+	printf("\n1.First data\t: %d \n", *pointer);
+	printf("2.The Second data\t: %d \n", *(pointer+1));
+	int begin=0,nexbegin = 0;
+	int end = sizeof(x) / sizeof(*x);
+	while (begin!=end)
+	{
+		*(pointer+begin) = begin;
+		++begin;
+	}
+	printf("After assign a new value to array through pointer \t: [ ");
+	while (nexbegin!=end)
+	{
+		printf("%d|", *(x + nexbegin));
+		++nexbegin;
+	}
+	printf("]\n");
+}
+
